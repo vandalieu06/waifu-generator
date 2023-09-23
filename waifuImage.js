@@ -12,7 +12,6 @@ async function buscarImagen () {
     try{
         const response = await fetch(requestUrl);
         let result = await response.json();
-        console.log(result)
         return result;
     } catch (error) {
         console.error(`Error: ${error}`)
@@ -22,44 +21,45 @@ async function buscarImagen () {
 //Obtencion de datos IMG
 async function imagenSrc() {
     let imageRandom = document.querySelector('#image__random');
-    let tittleWaifu = document.querySelector('.waifu__tittle--image');
-    let tagWaifu = document.querySelector('.waifu__tag--image');
-
+    
+    //Span para datos de descripcion
+    let tittleWaifu = document.querySelector('.waifu__tittleimage--span');
+    let tagWaifu = document.querySelector('.waifu__tag--span');
+    let artistWaifu = document.querySelector('.waifu__artist--span');
+    
     try {
         imageRandom.classList.remove('opacity-fade-in')
         imageRandom.classList.add('opacity-fade')
-
-        let img = await buscarImagen();
         
+        //Obtencion datos de la funcion API
+        let img = await buscarImagen();
         await new Promise( resolve => setTimeout(resolve, 2000))
 
+        //Attributos de la Imagen
         let url = img.images[0].url;
         let tittle = img.images[0].tags[0].description;
-        let tag = img.images[0].tags[0].name;
-
-        imageRandom.setAttribute('src', url)
-
-        await new Promise( resolve => setTimeout(resolve, 3000))
-
-        imageRandom.classList.remove('opacity-fade')
-        imageRandom.classList.add('opacity-fade-in')
-
-        let spanTittle = document.createElement('span');
-        spanTittle.innerHTML = tittle;
-        tittleWaifu.appendChild(spanTittle);
+        let tags = img.images[0].tags.map( (e) => { return e.name } )
+        let tag = tags.join(', ');
+        let artistText = img.images[0].artist ? img.images[0].artist.name : 'Desconocido';
+    
+        //Canvio src y Transicion de la imagen
+        imageRandom.setAttribute('src', url);
+        imageRandom.onload = () => {
+            imageRandom.classList.remove('opacity-fade');
+            imageRandom.classList.add('opacity-fade-in');
+        }
         
-        let spanTag = document.createElement('span');
-        spanTag.innerHTML = tag;
-        tagWaifu.appendChild(spanTag)
-
-
+        // Añadir descripcion de imagen
+        tittleWaifu.innerHTML = tittle;
+        tagWaifu.innerHTML = tag;
+        artistWaifu.innerHTML = artistText; 
     } catch (error) {
         console.log(error)
     };
 }
 
 //Ejecutar evento al incio de la pagina
-imagenSrc()
+imagenSrc();
 
 //Evento Boton Random
 let btnRandom = document.querySelector('.waifu__btn--random');

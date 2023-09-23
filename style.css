@@ -2,7 +2,7 @@
 
 *{
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
+    color: rgb(255 255 255 /0.95);
 }
 body{
     margin: 0;
@@ -15,7 +15,7 @@ body{
     flex-direction: row;
 }
 
-/*Body*/
+/*Content Waifu*/
 .waifu__contenedor{
     width: 100%;
     height: 100vh;
@@ -23,17 +23,51 @@ body{
     justify-content: center;
     background-color: rgb(0 0 0 /0.95);
 }
-
 .waifu__inner{
     width: 1200px;
 }
 
+/*Pricpial Tittle*/
 .waifu__tittle{
     color: #fff;
     text-align: center;
     font-size: 4.5rem;
 }
 
+/*Sec Dates Images*/
+.waifu__content{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 20px 0 0;
+}
+.waifu__contentittle{
+    font-size: 2.5rem;
+    text-align: center;
+}
+.waifu__tittleimage{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.waifu__tittleimage--span{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+.waifu__tag{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.waifu__tag--span{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+.waifu__artist{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.waifu__artist--span{
+    font-size: 1.4rem;
+    font-weight: 300;
+}
 .waifu__btn--random{
     width: 300px;
     background-color: rgb(255 255 255 /0.9);
@@ -42,23 +76,21 @@ body{
     text-align: center;
     border-radius: 10px;
     font-size: 1.2rem;
+    font-weight: 700;
     border: none;
     transition: all 400ms ease-in-out;
+    cursor: pointer;
 }
 .waifu__btn--random:hover{
     background-color: rgb(255 255 255 /1);
 }
-.waifu__content{
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0 20px 0 0;
-}
 
+/*Sec Image*/
 .waifu__image{
     box-sizing: border-box;
-    max-width: 600px;
-    max-height: 700px;
-    background-color: rgb(245, 209, 215);
+    max-width: 500px;
+    max-height: 600px;
+    background-color: rgb(245 209 215 /.8);
     border: 10px solid #fff;
     border-radius: 10px;
 }
