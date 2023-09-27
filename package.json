@@ -9,7 +9,6 @@
   "name": "waifu-api",
   "version": "1.0.0",
   "main": "waifuImage.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
