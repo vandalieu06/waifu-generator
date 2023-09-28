@@ -6,17 +6,36 @@
      <title>Waifu API - Jhonny Claure</title>
      <script defer src="./waifuImage.js"></script>
      <link rel="stylesheet" href="./style.css">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <header class="header">
+        <div class="header__inner">
+            <article class="header__logo header__article">
+                <img src="./assets/logo.png" alt="logo.png" class="header__logo--img">
+                <h2 class="header__logo--text">Waifu Random Image</h2>
+            </article>
+            <article class="header__icons header__article">
+                <i class='bx bxl-javascript header__icons--icon'></i>
+                <i class='bx bxl-css3 header__icons--icon'></i>
+                <i class='bx bxl-html5 header__icons--icon' ></i>
+                <i class='bx bxl-nodejs header__icons--icon'></i>
+            </article>
+            <nav class="header__profile header__article">
+                <a href="#">Jhonny Claure</a>
+                <i class='header__profile--icon bx bxl-github'></i>
+            </nav>
+        </div>
+    </header>
+
     <section class="waifu__contenedor">
         <div class="waifu__inner">
-            <h1 class="waifu__tittle">Waifu Random Image</h1>
-            <div class="flex__column">
+            <div class="waifu__column">
                 <article class="waifu__content">
-                    <h3 class="waifu__contentittle">Descripcion</h3>
-                    <p class="waifu__tittleimage">Titulo : <span class="waifu__tittleimage--span"> </span></p>
-                    <p class="waifu__tag">Etiquetas : <span class="waifu__tag--span"> </spa n></p>
-                    <p class="waifu__artist">Artista : <span class="waifu__artist--span"> </spa n></p>
+                    <h3 class="waifu__conten--tittle">Descripcion</h3>
+                    <p class="waifu__tittleimage waifu__text">Titulo : <span class="waifu__text--span"> </span></p>
+                    <p class="waifu__tag waifu__text">Etiquetas : <span class="waifu__text--span"> </spa n></p>
+                    <p class="waifu__artist waifu__text">Artista : <span class="waifu__text--span"> </spa n></p>
                     <button class="waifu__btn--random">Random IMAGE Waifu</button>
                 </article>
                 <article class="waifu__image">

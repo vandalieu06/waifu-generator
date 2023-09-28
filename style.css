@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
+:root{
+    --bg-header: #121212;
+    --bg-sec1: #1d1d1d;
+}
+
 *{
     font-family: 'Montserrat', sans-serif;
     color: rgb(255 255 255 /0.95);
@@ -9,10 +15,50 @@ body{
     padding: 0;
 }
 
-/*Flex*/
-.flex__column{
+/*Header*/
+.header{
+    width: 100%;
+    height: 150px;
+    background-color: var(--bg-header);
+}
+.header__inner{
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.header__article{
+    width: 450px;
+}
+.header__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.header__logo--img{
+    width: 90px;
+}
+.header__logo--text{
+    font-size: 1.75rem;
+}
+.header__icons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.header__icons--icon{
+    font-size: 55px;
+}
+.header__profile{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+}
+.header__profile--icon{
+    font-size: 60px;
 }
 
 /*Content Waifu*/
@@ -21,53 +67,36 @@ body{
     height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: rgb(0 0 0 /0.95);
+    background-color: var(--bg-sec1);
 }
 .waifu__inner{
+    padding: 40px 0;
     width: 1200px;
 }
-
-/*Pricpial Tittle*/
-.waifu__tittle{
-    color: #fff;
-    text-align: center;
-    font-size: 4.5rem;
+.waifu__column{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-
 /*Sec Dates Images*/
 .waifu__content{
     box-sizing: border-box;
     width: 50%;
     padding: 0 20px 0 0;
 }
-.waifu__contentittle{
+.waifu__conten--tittle{
     font-size: 2.5rem;
     text-align: center;
 }
-.waifu__tittleimage{
+.waifu__text{
     font-size: 1.5rem;
     font-weight: 600;
 }
-.waifu__tittleimage--span{
+.waifu__text--span{
     font-size: 1.4rem;
     font-weight: 300;
 }
-.waifu__tag{
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-.waifu__tag--span{
-    font-size: 1.4rem;
-    font-weight: 300;
-}
-.waifu__artist{
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-.waifu__artist--span{
-    font-size: 1.4rem;
-    font-weight: 300;
-}
+/*btn generate image*/
 .waifu__btn--random{
     width: 300px;
     background-color: rgb(255 255 255 /0.9);
@@ -88,8 +117,7 @@ body{
 /*Sec Image*/
 .waifu__image{
     box-sizing: border-box;
-    max-width: 500px;
-    max-height: 600px;
+    max-width: 600px;
     background-color: rgb(245 209 215 /.8);
     border: 10px solid #fff;
     border-radius: 10px;
@@ -97,7 +125,6 @@ body{
 .waifu__img{
     width: 100%;
     height: 100%;
-    object-position: center top;
     object-fit: cover;
     transition: opacity 2000ms ease-in-out;
 }

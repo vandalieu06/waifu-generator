@@ -23,9 +23,9 @@ async function imagenSrc() {
     let imageRandom = document.querySelector('#image__random');
     
     //Span para datos de descripcion
-    let tittleWaifu = document.querySelector('.waifu__tittleimage--span');
-    let tagWaifu = document.querySelector('.waifu__tag--span');
-    let artistWaifu = document.querySelector('.waifu__artist--span');
+    let tittleWaifu = document.querySelector('.waifu__tittleimage .waifu__text--span');
+    let tagWaifu = document.querySelector('.waifu__tag .waifu__text--span');
+    let artistWaifu = document.querySelector('.waifu__artist .waifu__text--span');
     
     try {
         imageRandom.classList.remove('opacity-fade-in')
